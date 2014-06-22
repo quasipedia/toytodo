@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Toy ToDo App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap-3.1.1.min.css">
+  <link type="text/css" rel="stylesheet" href="/static/todo.css" />
+</head>
+<body>
+
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="underscore-1.6.0.min.js"></script>
+  <script src="backbone-1.1.2.min.js"></script>
+  <script src="backbone-relational-0.8.8.js"></script>
+  <script src="handlebars-1.3.0.js"></script>
+
+  <!-- Container for the App -->
+
+  <div class="container">
+    <div id="app-container"></div>
+  </div>
+
+  <!-- Template for a ToDo List -->
+
+  <script type="text/x-handlebars-template" id="list-template">
+
+    <header>
+      <div class="row">
+        <h1>{{description}}</h1>
+        <hr />
+      </div>
+    </header>
+    
+    <section id="main">
+
+      <form class="form-inline" id="add-task">
+          <div id="form-row" class="row">
+            <div class="input-group input-group-lg">
+              <input id="new-task-description" class="form-control" type="text" placeholder="What needs to be done?">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Add Todo</button>
+              </span>
+            </div>
+          </div>
+      </form>
+
+      <div class="row">
+        <table id="todo-table" class="table table-striped table-hover">
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="row">
+        <hr />
+        <span id="todo-count"></span>
+        <a id="complete-all" class="pull-right">Mark all as complete</a>
+      </div>
+    </footer>
+
+  </script>
+
+  <!-- Template for a single ToDo item (task) -->
+
+  <script type="text/x-handlebars-template" id="task-template">
+
+    <th class="col-xs-10">
+      <div class="view">
+        <input class="toggle todo-action" type="checkbox" {{#if done}}checked="checked"{{/if}} />
+        <label class="todo-text">{{description}}</label>
+      </div>
+      <div>
+        <input class="edit todo-text" type="text" value="{{description}}" />
+      </div>
+    </th>
+    <th class="col-xs-1">
+        <a class="todo-action remove"><span class="glyphicon glyphicon-remove"></span></a>
+    </th>
+    <th class="todo-action col-xs-1">
+        <a class="todo-action move"><span class="glyphicon glyphicon-resize-vertical"></span></a>
+    </th>
+
+  </script>
+
+  <!-- The App! -->
+
+  <script src="todo.js"></script>
+
+</body>
+</html>

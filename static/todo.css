@@ -1,0 +1,62 @@
+body {
+	background-color: #F5F5F5;
+}
+
+.container {
+	margin-top: 5em;
+	width: 500px;
+	background-color: #FFF;
+	border: 1px solid #D0D0D0;
+	border-radius: 5px;
+	padding: 1em 2.5em;
+}
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+hr {
+    border-top: 1px dashed #D0D0D0; 
+}
+
+#form-row {
+	margin-bottom: 1.3em;
+}
+
+.todo-text {
+	font-size: 1.3em;
+	font-weight: lighter;
+	padding-left: .8em;
+	vertical-align: -.5em;
+}
+
+.done label{
+	color: #D0D0D0;
+	text-decoration: line-through;
+}
+
+.todo-action {
+	vertical-align: -.7em;
+}
+
+.edit {
+	width: 100%;
+}
+
+.glyphicon {
+	color: #D0D0D0;
+}
+
+.glyphicon-remove:hover {
+	color: red;
+}
+
+.glyphicon-resize-vertical:hover {
+	color: blue;
+}
+
+#todo-count {
+	color: #D0D0D0;
+	font-weight: bold;
+};
